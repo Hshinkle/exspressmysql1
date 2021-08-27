@@ -69,7 +69,7 @@ import mysql from 'mysql'
         }
         try {
             return new Promise( (resolve, reject) => {
-                let sql = 'SELECT * FROM Students where id = ' + id;
+                let sql = `SELECT * FROM Students where id = '${id}'`;
                 console.log('dbQueryStudents: sql='+sql);
                 conn.query( sql, (err, result, fields) => {
                     resultHandler( err, result, fields, resolve)
